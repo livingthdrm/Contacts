@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Joseph">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> County Club Members|Contacts</title>
+	<base href="/">
+	<!--bootstrap css-->
+	<!--<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!--bootstrap css theme| flatly-->
+	<link rel="stylesheet" href="src/bootstrap.min.css"/>
+	
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1>County Club Members|Contacts</h1>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="col-sm-6">
+				<form class="form-horizontal" action="/login" method="POST">
+					<h2> Log In </h2>
+					<div class="row form-group">
+						<label for="username" class="control-label col-sm-2"> Username: </label>
+						<div class="col-sm-8">
+						<input type="text" name="username" class="form-control" required>
+						</div>
+					</div>
+					<div class="row form-group">
+						<label for="password" class="control-label col-sm-2"> Password: </label>
+						<div class="col-sm-8">
+						<input type="password" name="password" class="form-control" required>
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button class="btn btn-primary"> Log In </button>
+						</div>
+					</div>
+				</form>
+				
+			</div>
+
+
+			<div class="col-sm-6">
+				<form class="form-horizontal" action="/register" method="POST">
+					<h2> Sign Up </h2>
+					<div class="row form-group">
+						<label for="username" class="control-label col-sm-2"> Username: </label>
+						<div class="col-sm-8">
+						<input type="text" name="username" class="form-control" required>
+						</div>
+					</div>
+					<div class="row form-group">
+						<label for="password" class="control-label col-sm-2"> Password: </label>
+						<div class="col-sm-8">
+						<input type="password" name="password" class="form-control" required>
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button class="btn btn-primary"> Sign Up </button>
+						</div>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

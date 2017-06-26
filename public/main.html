@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="ContactsApp">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Joseph">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> County Club Members|Contacts</title>
+	<base href="/">
+	<!--bootstrap css-->
+	<link rel="stylesheet" href="src/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+	<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+
+	<!--bootstrap css theme| flatly-->
+	<link rel="stylesheet" href="src/bootstrap.min.css"/>
+	<!--favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+<body >
+<div class="container">
+	<div class="page-header">
+		<h1>County Club Members|Contacts</h1>
+	</div>
+	<div class="row">
+		<div class="col-sm-12" ng-include="'views/nav.html'"></div>
+	</div>
+	<div class="row">
+	<!--ngview-->
+		<div class="col-sm-12" ng-view></div>
+	</div>
+</div>
+<!--Jquery-->
+<!--script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script-->
+<script src="src/bower_components/jquery/dist/jquery.min.js"></script>
+<!--bootstrap javascript-->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+<script src="src/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--Angularjs-->
+<script src="src/bower_components/angular/angular.min.js"></script>
+<script src="src/bower_components/angular-route/angular-route.min.js"></script>
+<script src="src/bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="src/bower_components/angular-messages/angular-messages.min.js"></script>
+<!--source files-->
+<script src="src/app.js"></script>
+<script src="src/controller.js"></script>
+<script src="src/factories.js"></script>
+<script src="src/filter.js"></script>
+<script src="src/directives.js"></script>
+</body>
+</html>
