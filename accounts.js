@@ -1,13 +1,15 @@
+/*jslint node:true */
+'use strict';
 var express = require("express"),
-	bodyParser 	= require("body-parser"),
-	session	 	= require("express-session"),
-	Bourne		= require("bourne"),
-	crypto		= require("crypto");
+	bodyParser = require("body-parser"),
+	session = require("express-session"),
+	Bourne = require("bourne"),
+	crypto = require("crypto");
 
 var router	= express.Router(),
 	db		= new Bourne("users.json");
 
-function hash (password) {
+function hash(password) {
 	return crypto.createHash("sha256").update(password).digest("hex");
 }
 
@@ -15,10 +17,9 @@ router
 	.use(bodyParser.urlencoded())
 	.use(bodyParser.json())
 	.use(session({ secret: "ghsafhadjkshgdhfsdhnklsdahfgsaladghsdgahf"}))
-	.get("/login", function (req, res){
-		res.sendfile("public/login.html");
-	})
-	.post("/login", function (req, res){
+	.get("/login", function (req, res) {res.sendfile("public/login.html");
+        })
+	.post("/login", function (req, res) {
 		var user = {
 			username: req.body.username,
 			password: hash(req.body.password)
@@ -27,9 +28,8 @@ router
 			if (data) {
 				req.session.userId = data.id;
 				res.redirect("/");
-			}else {
-				res.redirect("/login");
-			}
+			} else { res.redirect("/login");
+			    }
 		});
 	})
 	.post("/register", function (req, res) {
@@ -39,13 +39,13 @@ router
 			options: {}
 		};
 
-		db,find({username: user.username}, function (err, data) {
-			if (!data.lenght){
+		db.find({username: user.username}, function (err, data) {
+			if (!data.lenght) {
 				db.insert(user, function (err, data) {
 					req.session.userId = data.id;
 					res.redirect("/");
 				});
-			}else {
+			} else {
 				res.redirect("/login");
 			}
 		});
@@ -53,9 +53,9 @@ router
 	.get("/logout", function (req, res) {
 		req.session.userId = null;
 		res.redirect("/");
-	})	
+	})
 	.use(function (req, res, next) {
-		if (req.session.userId){
+		if (req.session.userId) {
 			db.findOne({id: req.session.userId}, function (err, data) {
 				req.user = data;
 			});
@@ -65,9 +65,8 @@ router
 	.get("/options/displayed_fields", function (req, res) {
 		if (!req.user) {
 			res.json([]);
-		}
-		else {
-			res.json(req.user.options.displayed_fields | | []);
+		} else {
+			res.json(req.user.options.displayed_fields || []);
 		}
 	})
 	.post("/options/displayed_fields", function (req, res) {
@@ -76,5 +75,4 @@ router
 			res.json(data[0].options.displayed_fields);
 		});
 	});
-
-module.exports = router;	
+module.exports = router;
