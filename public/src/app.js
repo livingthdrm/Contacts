@@ -1,5 +1,8 @@
+/*jslint node:true */
+/*global angular */
+'use strict';
 angular.module("ContactsApp", ["ngRoute", "ngResource", "ngMessages"])
-	.config(function($routeProvider, $locationProvider){
+	.config(function ($routeProvider, $locationProvider) {
 		$routeProvider
 			.when("/contacts", {
 				controller: "ListController",
@@ -23,7 +26,7 @@ angular.module("ContactsApp", ["ngRoute", "ngResource", "ngMessages"])
 		$locationProvider.html5Mode(true);
 	})
 	.value("options", {})
-	.run(function (options, Fields){
+	.run(function (options, Fields) {
 		Fields.get().success(function (data) {
 			options.displayed_fields = data;
 		});
